@@ -1,24 +1,9 @@
 server:
   port: 7001
-spring:
-  application:
-    name: eureka-server1
-  # 设置查看注册中心的登录用户以及他的角色
-  security:
-    user:
-      name: admin
-      password: root
-      roles: ROLEALL
 
 eureka:
   instance:
     hostname: eureka7001.com #eureka服务端的实例名称
-    #每隔5s发送一次心跳
-    lease-renewal-interval-in-seconds: 5
-    #告知服务端10秒还未收到心跳的话，就将该服务移除列表
-    lease-expiration-duration-in-seconds: 10
-    #健康检查路径
-    health-check-url-path: /actuator/health
   client:
     register-with-eureka: false     #false表示不向注册中心注册自己。
     fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
